@@ -36,7 +36,6 @@ function _wait_for_memcached_to_startup() {
 function start() {
     if ! isrunning
     then
-        source $OPENSHIFT_MEMCACHED_DIR/conf/memcached.conf
         if [ "$DISABLE_SASL" != "1" ]; then
             export MEMCACHED_SASL_PWDB=$OPENSHIFT_MEMCACHED_DIR/conf/sasldb
             OPTIONS="$OPTIONS -S"
