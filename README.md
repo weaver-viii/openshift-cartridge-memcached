@@ -1,6 +1,8 @@
 # OpenShift Memcached Cartridge
 
-The `memcached` cartridge provides [Memcached](http://www.memcached.org/) on OpenShift.
+The `memcached` cartridge provides [Memcached](http://www.memcached.org/) on OpenShift, to install  create your app and run:
+
+	rhc add-cartridge http://reflector-getupcloud.getup.io/reflect?github=getupcloud/openshift-origin-cartridge-memcached --app [APP]
 
 ## Environment Variables
 
