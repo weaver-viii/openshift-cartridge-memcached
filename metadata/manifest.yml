@@ -12,7 +12,6 @@ License: ASL 2.0
 Vendor: Memcached
 Categories:
   - service
-  - cache
   - embedded
 Website: http://www.memcached.org
 Help-Topics:
