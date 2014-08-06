@@ -13,12 +13,14 @@ set_env_var OPENSHIFT_MEMCACHED_PASSWORD "$password" env
 echo "$username:$password" > $OPENSHIFT_MEMCACHED_DIR/conf/sasldb
 
 client_result ' '
-client_result 'Use the following env vars on your application to connect to memcached:'
-client_result ' OPENSHIFT_MEMCACHED_HOST'
-client_result ' OPENSHIFT_MEMCACHED_PORT'
-client_result ' OPENSHIFT_MEMCACHED_USERNAME'
-client_result ' OPENSHIFT_MEMCACHED_PASSWORD'
+client_result 'Use following env vars on your application to connect to memcached:'
 client_result ' '
-client_result 'To disable authentication, add the DISABLE_SASL=1 environment variable and restart your application!'
-client_result 'Tip: $ rhc set-env DISABLE_SASL=1 --app [APP]'
-client_result 'Tip: $ rhc app-restart --app [APP]'
+client_result " OPENSHIFT_MEMCACHED_HOST     = $OPENSHIFT_MEMCACHED_HOST"
+client_result " OPENSHIFT_MEMCACHED_PORT     = $OPENSHIFT_MEMCACHED_PORT"
+client_result " OPENSHIFT_MEMCACHED_USERNAME = $OPENSHIFT_MEMCACHED_USERNAME"
+client_result " OPENSHIFT_MEMCACHED_PASSWORD = $OPENSHIFT_MEMCACHED_PASSWORD"
+client_result ' '
+client_result 'To disable authentication, add the DISABLE_SASL=1 environment variable and restart your application:'
+client_result ' '
+client_result "  $ rhc set-env DISABLE_SASL=1 --app $OPENSHIFT_APP_NAME"
+client_result "  $ rhc app-restart --app $OPENSHIFT_APP_NAME"
