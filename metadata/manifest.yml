@@ -6,13 +6,17 @@ Display-Name: Memcached Distributed Memory Object Caching System
 Description: "Memcached is an in-memory key-value store for small chunks of arbitrary data (strings, objects) from results of database calls, API calls, or page rendering."
 Version: '1.4.20'
 Versions: ['1.4.20']
+<<<<<<< HEAD
 Cartridge-Version: 1.0.0
 Cartridge-Vendor: caruccio
+=======
+Cartridge-Version: 0.2.0
+Cartridge-Vendor: brianredbeard
+>>>>>>> FETCH_HEAD
 License: ASL 2.0
 Vendor: Memcached
 Categories:
   - service
-  - database
   - embedded
 Website: http://www.memcached.org
 Help-Topics:
