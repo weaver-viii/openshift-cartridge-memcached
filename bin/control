@@ -6,12 +6,12 @@ export STOPTIMEOUT=20
 
 function _memcached()
 {
-	$OPENSHIFT_MEMCACHED_DIR/versions/$version/bin/memcached $@
+	$OPENSHIFT_MEMCACHED_DIR/versions/$OPENSHIFT_MEMCACHED_VERSION/bin/memcached $@
 }
 
 function _memcached-tool()
 {
-	$OPENSHIFT_MEMCACHED_DIR/versions/$version/bin/memcached-tool $@
+	$OPENSHIFT_MEMCACHED_DIR/versions/$OPENSHIFT_MEMCACHED_VERSION/bin/memcached-tool $@
 }
 
 function _log() {
