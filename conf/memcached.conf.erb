@@ -1,5 +1,5 @@
 MAXCONN="1024"
-CACHESIZE="64"
+CACHESIZE=$(echo "$OPENSHIFT_GEAR_MEMORY_MB * 0.8" | bc | cut -f1 -d.)
 OPTIONS=""
 
 # Set DISABLE_SASL to 1 to disable sasl auth.
