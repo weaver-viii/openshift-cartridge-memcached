@@ -11,6 +11,7 @@ Vendor: Memcached
 Categories:
   - service
   - embedded
+  - cache
 
 Website: http://www.memcached.org
 
