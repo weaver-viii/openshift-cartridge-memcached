@@ -1,6 +1,4 @@
-#!/bin/bash -e
-
-set -x
+#!/bin/bash
 
 source $OPENSHIFT_CARTRIDGE_SDK_BASH
 export STOPTIMEOUT=20
