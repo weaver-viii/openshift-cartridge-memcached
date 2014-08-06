@@ -20,7 +20,7 @@ make -j 2
 # install inside cartridge
 BIN_DIR="$OPENSHIFT_MEMCACHED_DIR/versions/$version/bin"
 mkdir -p $BIN_DIR
-cp -fv memcached scripts/memcached-tool $binaries
+cp -fv memcached scripts/memcached-tool $BIN_DIR
 
 set_env_var OPENSHIFT_MEMCACHED_PATH_ELEMENT "$BIN_DIR" $OPENSHIFT_MEMCACHED_DIR/env
 set_env_var OPENSHIFT_MEMCACHED_VERSION "$version" $OPENSHIFT_MEMCACHED_DIR/env
