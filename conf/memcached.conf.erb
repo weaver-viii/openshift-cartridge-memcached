@@ -1,7 +1,7 @@
 MAXCONN="1024"
-CACHESIZE="64"
+CACHESIZE=$(echo "$OPENSHIFT_GEAR_MEMORY_MB * 0.8" | bc | cut -f1 -d.)
 OPTIONS=""
 
-# Set DISABLE_SASL to 1 to disable sasl auth.
+# Set ENABLE_SASL=1 to enable sasl auth.
 # More info on memcached's SASL implementation here: https://code.google.com/p/memcached/wiki/SASLHowto
-#DISABLE_SASL="1"
+#ENABLE_SASL="1"

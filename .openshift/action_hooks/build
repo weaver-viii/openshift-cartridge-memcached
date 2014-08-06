@@ -7,7 +7,7 @@ set -e
 
 set -x
 exec 2>&1
-version=${MEMCACHED_TAG:-1.4.15}
+version=${MEMCACHED_TAG:-1.4.20}
 binaries="../../versions/$version/bin"
 
 pushd tmp
