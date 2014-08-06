@@ -10,16 +10,17 @@ esac
 
 # build from sources
 cd $OPENSHIFT_DATA_DIR
-git clone https://github.com/memcached/memcached memcached-$OPENSHIFT_MEMCACHED_VERSION
-cd memcached-$OPENSHIFT_MEMCACHED_VERSION
-git checkout $OPENSHIFT_MEMCACHED_VERSION
+git clone https://github.com/memcached/memcached memcached-$version
+cd memcached-$version
+git checkout $version
 ./autogen.sh
 ./configure --enable-sasl --enable-sasl-pwdb
 make -j 2
 
 # install inside cartridge
-BIN_DIR="$OPENSHIFT_MEMCACHED_DIR/versions/$OPENSHIFT_MEMCACHED_VERSION/bin"
+BIN_DIR="$OPENSHIFT_MEMCACHED_DIR/versions/$version/bin"
 mkdir -p $BIN_DIR
 cp -fv memcached scripts/memcached-tool $binaries
 
 set_env_var OPENSHIFT_MEMCACHED_PATH_ELEMENT "$BIN_DIR" $OPENSHIFT_MEMCACHED_DIR/env
+set_env_var OPENSHIFT_MEMCACHED_VERSION "$version" $OPENSHIFT_MEMCACHED_DIR/env
