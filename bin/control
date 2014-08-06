@@ -58,6 +58,7 @@ function start() {
 		if [ $? -ne 0 ]; then
 			client_message "Memcached has failed to start"
 			_log "Memcached has failed to start"
+			cat $OPENSHIFT_MEMCACHED_DIR/logs/memcached.log >&2
 			exit 1
 		fi
 		if wait_start; then
