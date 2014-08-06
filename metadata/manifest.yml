@@ -25,12 +25,10 @@ Cart-Data:
 Provides:
   - memcached
   - memcached-1.4
-  - "memcached(version) = 1.4"
-  - memcached-basic-mode
 
 Publishes:
-  publish-db-connection-info:
-    Type: "ENV:NET_TCP:db:connection-info"
+  publish-cache-connection-info:
+    Type: "ENV:NET_TCP:cache:connection-info"
 
 Scaling:
   Min: 1
