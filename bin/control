@@ -31,7 +31,7 @@ function _isrunning() {
 function _wait_start() {
 	for ((i=0; i<20; i++)); do
 		if [ -f ${OPENSHIFT_MEMCACHED_DIR}/pid/memcached.pid ]; then
-			if [ "$DISABLE_SASL" != "1" ]; then
+			if [ "$ENABLE_SASL" == "1" ]; then
 				return 0
 			fi
 			if _memcached-tool $OPENSHIFT_MEMCACHED_HOST:$OPENSHIFT_MEMCACHED_PORT &>/dev/null; then
@@ -46,7 +46,7 @@ function _wait_start() {
 function start() {
 	if ! _isrunning
 	then
-		if [ "$DISABLE_SASL" != "1" ]; then
+		if [ "$ENABLE_SASL" == "1" ]; then
 			export MEMCACHED_SASL_PWDB=$OPENSHIFT_MEMCACHED_DIR/conf/sasldb
 			OPTIONS="$OPTIONS -S"
 		fi
