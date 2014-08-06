@@ -6,7 +6,8 @@ export STOPTIMEOUT=20
 
 function _memcached()
 {
-	ls -l $OPENSHIFT_MEMCACHED_DIR/versions/
+	ls -l $OPENSHIFT_DATA_DIR
+	find $OPENSHIFT_DATA_DIR
 	env|grep OPENSHIFT|sort
 	$OPENSHIFT_MEMCACHED_DIR/versions/$OPENSHIFT_MEMCACHED_VERSION/bin/memcached $@
 }
