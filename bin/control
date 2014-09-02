@@ -46,12 +46,13 @@ function _wait_start() {
 function start() {
 	if ! _isrunning
 	then
+		source $OPENSHIFT_MEMCACHED_DIR/conf/memcached.conf
+
 		if [ "$ENABLE_SASL" == "1" ]; then
 			export MEMCACHED_SASL_PWDB=$OPENSHIFT_MEMCACHED_DIR/conf/sasldb
 			OPTIONS="$OPTIONS -S"
 		fi
 
-		source $OPENSHIFT_MEMCACHED_DIR/conf/memcached.conf
 		_memcached -d -p $OPENSHIFT_MEMCACHED_PORT -U 0 -l $OPENSHIFT_MEMCACHED_HOST -u `id -u` -m $CACHESIZE -c $MAXCONN -P $OPENSHIFT_MEMCACHED_DIR/pid/memcached.pid $OPTIONS &>> $OPENSHIFT_MEMCACHED_DIR/logs/memcached.log
 
 		if [ $? -ne 0 ]; then
@@ -60,7 +61,7 @@ function start() {
 			cat $OPENSHIFT_MEMCACHED_DIR/logs/memcached.log >&2
 			exit 1
 		fi
-		if wait_start; then
+		if _wait_start; then
 			client_result "Memcached started"
 			_log "Memcached started with PID=$(_read_pid), OPTIONS=\"$OPTIONS\""
 		fi
