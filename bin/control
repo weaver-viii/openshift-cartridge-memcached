@@ -60,7 +60,7 @@ function start() {
 			cat $OPENSHIFT_MEMCACHED_DIR/logs/memcached.log >&2
 			exit 1
 		fi
-		if wait_start; then
+		if _wait_start; then
 			client_result "Memcached started"
 			_log "Memcached started with PID=$(_read_pid), OPTIONS=\"$OPTIONS\""
 		fi
