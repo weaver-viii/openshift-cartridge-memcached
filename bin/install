@@ -23,4 +23,5 @@ client_result ' '
 client_result 'To enable authentication, set environment var ENABLE_SASL=1 and restart your application:'
 client_result ' '
 client_result "  $ rhc set-env ENABLE_SASL=1 --app $OPENSHIFT_APP_NAME"
-client_result "  $ rhc app-restart --app $OPENSHIFT_APP_NAME"
+client_result "  $ rhc app-stop --app $OPENSHIFT_APP_NAME"
+client_result "  $ rhc app-start --app $OPENSHIFT_APP_NAME"
