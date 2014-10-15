@@ -40,3 +40,5 @@ Endpoints:
     Private-Port-Name: PORT
     Private-Port:      11211
     Public-Port-Name:  PROXY_PORT
+
+Source: https://github.com/getupcloud/openshift-origin-cartridge-memcached/raw/master/metadata/manifest.yml
