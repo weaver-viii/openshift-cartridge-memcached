@@ -41,4 +41,4 @@ Endpoints:
     Private-Port:      11211
     Public-Port-Name:  PROXY_PORT
 
-Source-Url: https://github.com/getupcloud/openshift-origin-cartridge-memcached.git
+Source-Url: https://github.com/getupcloud/openshift-origin-cartridge-memcached/archive/master.zip
