@@ -3,7 +3,7 @@
 Summary:       Provides Memcached support to OpenShift
 Name:          openshift-cartridge-memcached
 Version:       1.0
-Release:       1%{?dist}
+Release:       0%{?dist}
 Group:         Network/Daemons
 License:       ASL 2.0
 URL:           http://memcached.org
