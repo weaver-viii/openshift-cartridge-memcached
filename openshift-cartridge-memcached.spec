@@ -3,7 +3,7 @@
 Summary:       Provides Memcached support to OpenShift
 Name:          openshift-cartridge-memcached
 Version:       1.0
-Release:       0%{?dist}
+Release:       1%{?dist}
 Group:         Network/Daemons
 License:       ASL 2.0
 URL:           http://memcached.org
@@ -32,14 +32,16 @@ Provides Memcached cartridge support to OpenShift.
 %{_sbindir}/oo-admin-cartridge --action install --source %{cartridgedir}
 
 %files
-dgedir}
-%attr(0755,-,-) %{cartridgedir}/bin/
+%{cartridgedir}
 %attr(0755,-,-) %{cartridgedir}
 %doc %{cartridgedir}/README.md
 %doc %{cartridgedir}/COPYRIGHT
 %doc %{cartridgedir}/LICENSE
 
 %changelog
+* Mon Dec 01 2014 Builder <getup@getupcloud.com>
+- rebuild
+
 * Mon Dec 01 2014 Builder <getup@getupcloud.com> 1.0-0
 - new package built with tito
 
