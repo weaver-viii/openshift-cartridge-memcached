@@ -2,15 +2,16 @@
 
 Summary:       Provides Memcached support to OpenShift
 Name:          openshift-cartridge-memcached
-Version:       1.1
-Release:       1%{?dist}
+Version:       1.0
+Release:       0%{?dist}
 Group:         Network/Daemons
 License:       ASL 2.0
 URL:           http://memcached.org
 Source0:       %{name}-%{version}.tar.gz
 Requires:      rubygem(openshift-origin-node)
 Requires:      openshift-origin-node-util
-Provides:      openshift-cartridge-memcached-1.0 = 1.4
+Provides:      openshift-cartridge-memcached = 1.0
+Provides:      openshift-cartridge-memcached-1.0 = 1.0
 BuildArch:     noarch
 
 %description
