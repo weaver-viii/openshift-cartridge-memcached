@@ -54,6 +54,6 @@ if [ $publish -eq 1 ]; then
 	pushd /mnt/getup-mirror/$RELEASE_DIR/
 	aws s3 sync "s3://getup-mirror/$RELEASE_DIR/" . --region us-west-2
 	createrepo .
-	#aws s3 rm "s3://getup-mirror/$RELEASE_DIR/repodata" --recursive
-	#aws s3 sync . "s3://getup-mirror/$RELEASE_DIR/" --region us-west-2 --acl public-read
+	aws s3 rm "s3://getup-mirror/$RELEASE_DIR/repodata" --recursive
+	aws s3 sync . "s3://getup-mirror/$RELEASE_DIR/" --region us-west-2 --acl public-read
 fi
