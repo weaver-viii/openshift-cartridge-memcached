@@ -11,15 +11,13 @@ set -eu
 branch=master
 build=1
 publish=1
-app=0
 while [ $# -gt 0 ]; do
 	case "$1" in
-		--app) app=1;;
 		--no-build) build=0;;
 		--no-publish) publish=0;;
 		--branch) shift; branch="$1";;
 		*) echo "invalid param: $1"
-		   echo "use: $0 [--app] [--no-build] [--no-publish] [--branch BRANCH]"
+		   echo "use: $0 [--no-build] [--no-publish] [--branch BRANCH]"
 		   exit 1
 	esac
 	shift
