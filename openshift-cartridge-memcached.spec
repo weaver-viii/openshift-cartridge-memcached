@@ -39,9 +39,6 @@ Provides Memcached cartridge support to OpenShift.
 %doc %{cartridgedir}/LICENSE
 
 %changelog
-* Mon Dec 01 2014 Builder <getup@getupcloud.com>
-- rebuild
-
 * Mon Dec 01 2014 Builder <getup@getupcloud.com> 1.0-0
 - new package built with tito
 
