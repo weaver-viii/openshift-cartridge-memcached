@@ -2,7 +2,7 @@
 
 Summary:       Provides Memcached support to OpenShift
 Name:          openshift-cartridge-memcached
-Version:       1.0
+Version:       1.1
 Release:       6%{?dist}
 Group:         Network/Daemons
 License:       ASL 2.0
@@ -10,8 +10,8 @@ URL:           http://memcached.org
 Source0:       %{name}-%{version}.tar.gz
 Requires:      rubygem(openshift-origin-node)
 Requires:      openshift-origin-node-util
-Provides:      openshift-cartridge-memcached = 1.0
-Provides:      openshift-cartridge-memcached-1.0 = 1.0
+Provides:      openshift-cartridge-memcached = 1.1
+Provides:      openshift-cartridge-memcached-1.1 = 1.1
 BuildArch:     noarch
 
 %description
@@ -39,6 +39,10 @@ Provides Memcached cartridge support to OpenShift.
 %doc %{cartridgedir}/LICENSE
 
 %changelog
+* Tue Dec 02 2014 Builder <getup@getupcloud.com> 1.1-6
+- Set cache size from envvar MEMCACHED_CACHESIZE
+  (mateus.caruccio@getupcloud.com)
+
 * Mon Dec 01 2014 Builder <getup@getupcloud.com> 1.0-6
 - remove unused build parameter (getup@getupcloud.com)
 
