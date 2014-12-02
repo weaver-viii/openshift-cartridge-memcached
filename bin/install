@@ -15,10 +15,16 @@ echo "$username:$password" > $OPENSHIFT_MEMCACHED_DIR/conf/sasldb
 client_result ' '
 client_result 'Use following env vars on your application to connect to memcached:'
 client_result ' '
-client_result " OPENSHIFT_MEMCACHED_HOST     = $OPENSHIFT_MEMCACHED_HOST"
-client_result " OPENSHIFT_MEMCACHED_PORT     = $OPENSHIFT_MEMCACHED_PORT"
-client_result " OPENSHIFT_MEMCACHED_USERNAME = $username"
-client_result " OPENSHIFT_MEMCACHED_PASSWORD = $password"
+client_result " OPENSHIFT_MEMCACHED_HOST      = $OPENSHIFT_MEMCACHED_HOST"
+client_result " OPENSHIFT_MEMCACHED_PORT      = $OPENSHIFT_MEMCACHED_PORT"
+client_result " OPENSHIFT_MEMCACHED_USERNAME  = $username"
+client_result " OPENSHIFT_MEMCACHED_PASSWORD  = $password"
+client_result " OPENSHIFT_MEMCACHED_CACHESIZE = $OPENSHIFT_MEMCACHED_CACHESIZE/$OPENSHIFT_GEAR_MEMORY_MB MB"
+client_result ' '
+client_result 'Specify how much memory memcached is allowed to use by settings user env var MEMCACHED_CACHESIZE:'
+client_result ' '
+client_result "  $ rhc set-env MEMCACHED_CACHESIZE=128 --app $OPENSHIFT_APP_NAME"
+client_result "  $ rhc app-restart --app $OPENSHIFT_APP_NAME"
 client_result ' '
 client_result 'To enable authentication, set environment var ENABLE_SASL=1 and restart your application:'
 client_result ' '
