@@ -14,7 +14,7 @@ function _memcached-tool()
 }
 
 function _log() {
-	echo "$(date): $@" >> $OPENSHIFT_MEMCACHED_DIR/logs/memcached.log
+	echo "$(date): $@" | logshifter -tag memcached
 }
 
 function _read_pid() {
@@ -53,12 +53,12 @@ function start() {
 			OPTIONS="$OPTIONS -S"
 		fi
 
-		_memcached -d -p $OPENSHIFT_MEMCACHED_PORT -U 0 -l $OPENSHIFT_MEMCACHED_HOST -u `id -u` -m $CACHESIZE -c $MAXCONN -P $OPENSHIFT_MEMCACHED_DIR/pid/memcached.pid $OPTIONS &>> $OPENSHIFT_MEMCACHED_DIR/logs/memcached.log
+		_memcached -d -p $OPENSHIFT_MEMCACHED_PORT -U 0 -l $OPENSHIFT_MEMCACHED_HOST -u `id -u` -m $CACHESIZE -c $MAXCONN -P $OPENSHIFT_MEMCACHED_DIR/pid/memcached.pid $OPTIONS |& /usr/bin/logshifter -tag memcached &
 
 		if [ $? -ne 0 ]; then
 			client_message "Memcached has failed to start"
 			_log "Memcached has failed to start"
-			cat $OPENSHIFT_MEMCACHED_DIR/logs/memcached.log >&2
+			cat $OPENSHIFT_LOG_DIR/memcached.log >&2
 			exit 1
 		fi
 		if _wait_start; then
