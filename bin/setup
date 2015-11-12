@@ -16,7 +16,7 @@ cd memcached-$version
 git checkout $version
 ./autogen.sh
 
-if [ "$ENABLE_SASL" == "1" ] || [ "${WITH_SASL:-1}" == "1" ] then
+if [ "$ENABLE_SASL" == "1" ] || [ "${WITH_SASL:-1}" == "1" ]; then
     SASL_OPTS="--enable-sasl --enable-sasl-pwdb"
 fi
 
